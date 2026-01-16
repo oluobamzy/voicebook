@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { X, Upload, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { config } from '../config';
 
 interface ContactModalProps {
   isOpen: boolean;
