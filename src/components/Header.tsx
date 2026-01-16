@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Headphones } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +17,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <Headphones className="w-6 h-6 text-white" />
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="VoiceBook Logo" 
+              className="h-10 w-auto"
+            />
             <span className="text-xl font-bold text-gray-900">VoiceBook</span>
           </a>
 
