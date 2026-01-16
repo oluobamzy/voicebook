@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const footerLinks = {
     product: [
@@ -22,10 +24,10 @@ const Footer = () => {
       { name: 'Blog', href: '#' }
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-      { name: 'Accessibility', href: '#' }
+      { name: 'Privacy Policy', href: '/privacy-policy', isRoute: true },
+      { name: 'Terms of Service', href: '/terms-of-service', isRoute: true },
+      { name: 'Cookie Policy', href: '/cookie-policy', isRoute: true },
+      { name: 'Accessibility', href: '/accessibility', isRoute: true }
     ]
   };
 
@@ -108,12 +110,21 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,41 +1,35 @@
-import { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Download from './components/Download';
-import UseCases from './components/UseCases';
-import Features from './components/Features';
-import Community from './components/Community';
-import Support from './components/Support';
-import Footer from './components/Footer';
-import VideoModal from './components/VideoModal';
-import ContactModal from './components/ContactModal';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import Accessibility from './pages/Accessibility';
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+}
 
 function App() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero onWatchDemo={() => setIsVideoModalOpen(true)} />
-        <Download />
-        <UseCases />
-        <Features />
-        <Community />
-        <Support onContactClick={() => setIsContactModalOpen(true)} />
-      </main>
-      <Footer />
-      
-      <VideoModal 
-        isOpen={isVideoModalOpen} 
-        onClose={() => setIsVideoModalOpen(false)} 
-      />
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
-      />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/accessibility" element={<Accessibility />} />
+      </Routes>
+    </Router>
   );
 }
 
