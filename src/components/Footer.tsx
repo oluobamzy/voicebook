@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { config } from '../config';
 
 const Footer = () => {
   const footerLinks = {
@@ -10,18 +11,18 @@ const Footer = () => {
       { name: 'Roadmap', href: '#' }
     ],
     support: [
-      { name: 'Help Center', href: 'https://help.getvoicebook.app' },
+      { name: 'Help Center', href: config.support.helpCenter },
       { name: 'Contact Us', href: '#support' },
       { name: 'FAQs', href: '#support' },
       { name: 'System Status', href: '#' },
       { name: 'Report a Bug', href: '#' }
     ],
     community: [
-      { name: 'Discord', href: '#' },
-      { name: 'Slack', href: '#' },
-      { name: 'Twitter', href: '#' },
-      { name: 'Instagram', href: '#' },
-      { name: 'Blog', href: '#' }
+      { name: 'Discord', href: config.community.discord },
+      { name: 'Slack', href: config.community.slack },
+      { name: 'Twitter', href: config.social.twitter },
+      { name: 'Instagram', href: config.social.instagram },
+      { name: 'Blog', href: config.social.blog }
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy-policy', isRoute: true },

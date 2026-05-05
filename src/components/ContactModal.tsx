@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { X, Upload, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
+import { config } from '../config';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -57,11 +58,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   }, [isOpen, reset]);
 
   const onSubmit = async (data: FormData) => {
-    // Using Formspree with direct email endpoint
-    // This sends form submissions directly to oluobamzy@gmail.com
-    
+    // Submissions are sent through Formspree (form ID configured in src/config.ts)
     try {
-      const response = await fetch('https://formspree.io/f/xvzzgedn', {
+      const response = await fetch(`https://formspree.io/f/${config.formspreeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

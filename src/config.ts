@@ -22,6 +22,7 @@ export const config = {
     facebook: 'https://facebook.com/voicebookapp',
     linkedin: 'https://linkedin.com/company/voicebook',
     youtube: 'https://youtube.com/@voicebookapp',
+    blog: 'https://blog.getvoicebook.app', // TODO: Replace once blog is live
   },
 
   // Support Links
@@ -30,17 +31,16 @@ export const config = {
     tutorials: 'https://youtube.com/playlist?list=YOUR_PLAYLIST_ID', // Replace with your YouTube playlist
   },
 
-  // Formspree Form ID - Get yours at https://formspree.io
-  formspreeId: 'YOUR_FORM_ID',
+  // Formspree Form ID - https://formspree.io
+  formspreeId: 'xvzzgedn',
 
   // YouTube Demo Video ID - The part after watch?v= in the URL
-  youtubeVideoId: 'dQw4w9WgXcQ', // Replace with your actual video ID
+  youtubeVideoId: 'dQw4w9WgXcQ', // TODO: Replace with real demo video ID
 
-  // Google Analytics 4 Measurement ID - Get yours at https://analytics.google.com
-  googleAnalyticsId: 'G-XXXXXXXXXX', // Replace with your GA4 ID
+  // Google Analytics 4 Measurement ID
+  googleAnalyticsId: 'G-13311028622',
 
-  // Live Chat - Using Tawk.to (free)
-  // Get your property ID at https://www.tawk.to
-  tawkPropertyId: 'YOUR_TAWK_PROPERTY_ID',
-  tawkWidgetId: 'YOUR_TAWK_WIDGET_ID',
+  // Live Chat - Tawk.to (https://www.tawk.to)
+  tawkPropertyId: '6969fa0c76ce99197bd8ff8c',
+  tawkWidgetId: '1jf2vhg4t',
 };
